@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>anafuxa</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__main">
+      <div class="topbar__branding">
+        <div class="topbar__title" id="AppTitleText">anafuxa</div>
+        <div class="topbar__subtitle" id="AppSubtitleText">Analyze FUXA</div>
+      </div>
+
+      <div class="language-picker">
+        <label for="language-select" id="LanguageLabelText">Language/Idioma/语言</label>
+        <select id="language-select" aria-labelledby="LanguageLabelText">
+          <option id="LanguageOptionEnglishText" value="en">English</option>
+          <option id="LanguageOptionSpanishText" value="es">Español</option>
+          <option id="LanguageOptionChineseText" value="zh">中文</option>
+        </select>
+      </div>
+
+      <div class="topbar__file-tools">
+        <div id="topbar-file-meta" class="topbar-file-meta muted" aria-live="polite"></div>
+        <label for="project-file" id="TopbarLoadFileText" class="topbar-file-button">Load File</label>
+        <input id="project-file" name="project-file" type="file" accept=".json,application/json" hidden>
+      </div>
+    </div>
+
+    <div class="topbar__tabs">
+      <nav class="topbar__nav" aria-label="Primary">
+        <button id="HomeNavText" class="nav-button is-active" data-view="home">Home / Summarize for AI</button>
+        <button id="FindReferencesNavText" class="nav-button" data-view="find-references">Find All References</button>
+        <button id="TagInsightsNavText" class="nav-button" data-view="tag-insights">Tag Insights</button>
+        <button id="ScriptInsightsNavText" class="nav-button" data-view="script-insights">Script Insights</button>
+        <button id="TagEditNavText" class="nav-button" data-view="tag-edit">Tag Edit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="view is-active" id="view-home">
+      <div class="panel">
+        <textarea id="readme-input" rows="5" placeholder="Optional text to prepend before the generated TOON output."></textarea>
+
+        <div class="button-row">
+          <button id="ConvertButtonText" type="button" disabled title="Not implemented yet">Convert to TOON</button>
+          <button id="DownloadButtonText" type="button" disabled title="Not implemented yet">Download TOON</button>
+          <button id="CopyButtonText" type="button" disabled title="Not implemented yet">Copy TOON</button>
+        </div>
+
+        <textarea id="toon-output" rows="14" placeholder="TOON output will appear here in a future step." disabled></textarea>
+      </div>
+    </section>
+
+    <section class="view" id="view-find-references" aria-labelledby="FindReferencesHeadingText" hidden>
+
+
+      <div class="panel">
+        <label for="reference-search" class="form-label" id="ReferenceSearchLabelText">Search string</label>
+        <div class="button-row button-row--compact">
+          <input id="reference-search" type="text" autocomplete="off">
+          <button id="ApplyReferenceSearchText" type="button">Apply Search</button>
+        </div>
+        <p class="muted" id="ReferenceSearchHelpText">The navigator starts collapsed except for top-level string values. Matching keys, values, and ancestor subtrees will be highlighted.</p>
+        <p class="muted" id="reference-search-current"></p>
+      </div>
+
+      <div class="panel">
+        <h2 id="ReferenceNavigatorHeadingText">JSON Navigator</h2>
+        <div id="reference-status" class="status-box" aria-live="polite"></div>
+        <div id="reference-tree" class="json-tree section-gap-top"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-tag-insights" aria-labelledby="TagInsightsHeadingText" hidden>
+      <div class="panel">
+        <h1 id="TagInsightsHeadingText">Tag Insights</h1>
+        <p id="TagInsightsBodyText">Tag analysis and reporting will appear here in a future step.</p>
+      </div>
+    </section>
+
+    <section class="view" id="view-script-insights" aria-labelledby="ScriptInsightsHeadingText" hidden>
+      <div class="panel">
+        <h1 id="ScriptInsightsHeadingText">Script Insights</h1>
+        <p id="ScriptInsightsBodyText">Script inspection and analysis will appear here in a future step.</p>
+      </div>
+    </section>
+
+    <section class="view" id="view-tag-edit" aria-labelledby="TagEditHeadingText" hidden>
+      <div class="panel">
+        <h1 id="TagEditHeadingText">Tag Edit</h1>
+        <p id="TagEditBodyText">Tag editing tools will appear here in a future step.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/strings.js"></script>
+  <script src="js/anafuxa_settings.js"></script>
+  <script src="js/last_project.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "anafuxa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Web-based engineering tool shell for analyzing and editing FUXA projects.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
